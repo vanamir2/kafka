@@ -8,6 +8,9 @@
 - create topics to store events
     - bin/kafka-topics.sh --create --topic streams-plaintext-input --bootstrap-server localhost:9092
     - bin/kafka-topics.sh --create --topic streams-pipe-output --bootstrap-server localhost:9092
+    - bin/kafka-topics.sh --create --topic streams-linesplit-output --bootstrap-server localhost:9092
+    - bin/kafka-topics.sh --create --topic streams-wordcount-output --bootstrap-server localhost:9092
+  
 
 ## Run Java program (Pipe)
 - mvn clean package
@@ -20,3 +23,6 @@
 ## Consumer
 - Receives input from Pipe
 - bin/kafka-console-consumer.sh --topic streams-pipe-output --from-beginning --bootstrap-server localhost:9092
+- bin/kafka-console-consumer.sh --topic streams-linesplit-output --from-beginning --bootstrap-server localhost:9092
+- bin/kafka-console-consumer.sh --topic streams-wordcount-output --from-beginning --bootstrap-server localhost:9092
+
